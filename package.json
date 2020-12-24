@@ -4,8 +4,21 @@
   "author": "blooak",
   "version": "1.0.2",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blooak/RegEz.git"
+  },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "keywords": [
+    "regex",
+    "regexp",
+    "regular expression",
+    "regez",
+    "string",
+    "match",
+    "find"
+  ],
   "scripts": {
     "build": "webpack",
     "watch": "ts-node-dev --respawn --transpile-only src"
