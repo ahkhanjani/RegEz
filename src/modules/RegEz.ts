@@ -1,7 +1,7 @@
 // config
 import config from '../config';
 // modules
-import Block from './Block';
+import { Block } from './Block';
 // utils
 import { neutralizeSpecialChars } from '../utils/neutralize-special-chars';
 import { message, ErrorType } from '../utils/message';
@@ -29,7 +29,7 @@ type Flag =
  *
  * To know more about flags see [this](https://javascript.info/regexp-introduction).
  */
-export default function RegEz(
+export function RegEz(
   blocks: any[],
   flags: Flag[] = [],
   startOfLine: boolean = false,

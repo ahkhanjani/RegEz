@@ -22,7 +22,7 @@ type CharGroup =
 
 type RepeatsTimes = 'zero-or-one' | 'zero-or-more' | 'one-or-more';
 
-export default class Block {
+export class Block {
   // constructor
   private blockType: BlockType;
   // options
