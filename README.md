@@ -173,7 +173,7 @@ All blocks have been created. Now we put them together.
 The `RegEz` module will do this for us.
 
 ```javascript
-import RegEz from 'regez';
+import { RegEz } from 'regez';
 
 const emailRegEx = RegEz();
 ```
