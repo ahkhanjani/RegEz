@@ -191,7 +191,7 @@ const emailRegEx = RegEz([
   [EXT],
 ]);
 
-// Result: /([^\d_\.])([a-zA-Z\d_\.]{5,32})([^\d_\.])@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})/
+// Result: /(([^\d_\.])([a-zA-Z\d_\.]{5,32})([^\d_\.]))@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})/
 ```
 
 **Explanation:**
@@ -210,7 +210,7 @@ const emailRegEx = RegEz(
   ['insensitive']
 );
 
-// Result: /([^_\.])([a-zA-Z\d_\.]{5,32})([^_\.])@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})/i
+// Result: /(([^_\.])([a-zA-Z\d_\.]{5,32})([^_\.]))@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})/i
 ```
 
 This will add the `i` flag to the RegEx: `/.../i`.
@@ -230,14 +230,12 @@ const emailRegEx = RegEz(
   true,
   true
 );
-
-// Result: /^([^_\.])([a-zA-Z\d_\.]{5,32})([^_\.])@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})$/i
 ```
 
 This will add the `^` and the `$` to the RegEx: `/^...$/`. So the final result is:
 
 ```regexp
-/^([^_\.])([a-zA-Z\d_\.]{5,32})([^_\.])@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})$/i
+/^(([^_\.])([a-zA-Z\d_\.]{5,32})([^_\.]))@([a-zA-Z]{3,12})\.([a-zA-Z]{2,8})$/i
 ```
 
 Now the RegEx is complete. Module `RegEz` returns a RegExp object. So you can test a string like this:
