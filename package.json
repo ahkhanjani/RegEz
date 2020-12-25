@@ -2,7 +2,7 @@
   "name": "regez",
   "description": "A RegEx generator for coding regular expressions in JavaScript.",
   "author": "blooak",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
