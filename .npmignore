@@ -3,6 +3,5 @@ src
 .gitignore
 .npmignore
 tsconfig.json
-webpack.config.js
 yarn.lock
 dist
