@@ -23,11 +23,8 @@ export async function loadConfig(cwd: string): Promise<Options> {
     cwd
   );
 
-  console.log(config);
-
   return { ...defaultConfig, ...config.data };
 }
-loadConfig(process.cwd());
 
 interface Options {
   debugger: boolean;
