@@ -22,7 +22,7 @@
     "generator"
   ],
   "scripts": {
-    "watch": "ts-node-dev --respawn --transpile-only src",
+    "watch": "tsnd --respawn --transpile-only",
     "prepublish": "tsc"
   },
   "devDependencies": {

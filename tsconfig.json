@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es6",
     "module": "commonjs",
     "rootDir": "src",
-    "outDir": "lib",
+    "outDir": "dist",
     "lib": ["dom", "es6", "es2017"],
     "moduleResolution": "node",
     "declaration": true,
