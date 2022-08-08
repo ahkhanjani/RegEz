@@ -1,30 +1,30 @@
-// node
-import path from 'path';
-import fs from 'fs';
-// utils
-import { ErrorType, message } from './utils/message';
+import JoyCon from 'joycon';
+import YAML from 'yaml';
 
-interface Config {
-  fullErrors: boolean;
-  noWarnings: boolean;
-}
+const joycon = new JoyCon();
 
-let config: Config = {
-  fullErrors: false,
-  noWarnings: false,
+joycon.addLoader({
+  test: /^\.(yaml|yml)$/,
+  load(filepath) {
+    return YAML.parse(filepath);
+  },
+});
+
+const defaultConfig: Options = {
+  debugger: false,
 };
 
-const configPath: string = path.join(process.cwd(), 'regez.config.json');
+export async function loadConfig(cwd: string): Promise<Options> {
+  const acceptedExtentions = Object.freeze(['json', 'js', 'ts', 'yaml', 'yml']);
 
-if (fs.existsSync(configPath)) {
-  const jsonString = fs.readFileSync(configPath, 'utf-8');
+  const config = await joycon.load(
+    acceptedExtentions.map((ext) => `regez.config.${ext}`),
+    cwd
+  );
 
-  try {
-    const parsedJson: Config = JSON.parse(jsonString);
-    config = { ...config, ...parsedJson };
-  } catch (err) {
-    message('Error', ErrorType.INVALID_CONFIG);
-  }
+  return { ...defaultConfig, ...config.data };
 }
 
-export default config;
+interface Options {
+  debugger: boolean;
+}
